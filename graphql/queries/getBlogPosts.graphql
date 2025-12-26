@@ -1,0 +1,14 @@
+query GetBlogPosts {
+  blogPosts {
+    id
+    title
+    author {
+      name
+    }
+    tags
+    createdAt
+    updatedAt
+  }
+}
+
+

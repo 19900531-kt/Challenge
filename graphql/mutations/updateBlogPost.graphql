@@ -1,0 +1,15 @@
+mutation UpdateBlogPost($id: ID!, $input: UpdateBlogPostInput!) {
+  updateBlogPost(id: $id, input: $input) {
+    id
+    title
+    content
+    author {
+      name
+    }
+    tags
+    createdAt
+    updatedAt
+  }
+}
+
+

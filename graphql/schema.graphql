@@ -1,0 +1,48 @@
+type Author {
+  name: String!
+  avatar: String!
+}
+
+type BlogPost {
+  id: ID!
+  title: String!
+  content: String!
+  author: Author!
+  tags: [String!]!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Query {
+  blogPosts: [BlogPost!]!
+  blogPost(id: ID!): BlogPost
+}
+
+type Mutation {
+  createPost(input: CreatePostInput!): BlogPost!
+  createBlogPost(input: CreateBlogPostInput!): BlogPost!
+  updateBlogPost(id: ID!, input: UpdateBlogPostInput!): BlogPost!
+  deleteBlogPost(id: ID!): Boolean!
+}
+
+input CreatePostInput {
+  title: String!
+  content: String!
+  author: String!
+  tags: [String!]!
+}
+
+input CreateBlogPostInput {
+  title: String!
+  content: String!
+  author: String!
+  tags: [String!]!
+}
+
+input UpdateBlogPostInput {
+  title: String
+  content: String
+  tags: [String!]
+}
+
+
